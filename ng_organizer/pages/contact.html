@@ -1,0 +1,80 @@
+﻿<div class="jumbotron text-center">
+    <h1>Contact Manager</h1>
+
+    <p>{{ message }}</p>
+</div>
+
+<div style="width: 800px; margin: auto;">
+    <div class="row">
+        <aside class="col-lg-3">
+            <div class="form-group">
+                <input type="text" ng-model="searchText" class="form-control" />
+            </div>
+            <ul class="list-group">
+                <li ng-repeat="contact in contacts | lastName:searchText" class="list-group-item repeated-item">
+
+                    <a ng-href="" ng-click="select($index)">
+                        <span ng-bind="contact.firstName"></span>&nbsp;<span ng-bind="contact.lastName"></span>
+                    </a>
+                    <button type="button" class="btn btn-danger " ng-click="delete(contact)"> <span class="glyphicon glyphicon-minus"></span></button>
+                </li>
+            </ul>
+
+        </aside>
+        <article class="col-lg-offset-1 col-lg-8">
+
+            <form novalidate role="form" name="form" class="form-horizontal" ng-submit="add()">
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="title" ng-model="currentContact.title" ng-options="title for title in titles" required>
+                            <option value="">-- choose title --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="currentContact.firstName" id="firstName" placeholder="First Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="currentContact.lastName" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="eMail" class="form-control" id="email" ng-model="currentContact.eMail" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">City</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="city" ng-model="currentContact.City" placeholder="City">
+                    </div>
+                    <label for="state" class="col-sm-1 control-label">State</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="state" ng-model="currentContact.State" placeholder="State">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-3">
+                        <!-- note: there is now action on the button, it is on the form so it handles enter/return too -->
+                        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid || inEditMode">Add Contact</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <!-- note: there is now action on the button, it is on the form so it handles enter/return too -->
+                        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid || !inEditMode" ng-click="edit()">Edit Contact</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-warning" ng-click="clear()">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </div>
+</div>

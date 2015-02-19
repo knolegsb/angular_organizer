@@ -1,0 +1,14 @@
+﻿#slides_control > div{
+ 
+}
+img{
+  margin:auto;
+  
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}

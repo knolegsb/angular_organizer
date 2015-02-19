@@ -1,0 +1,22 @@
+﻿<div class="jumbotron text-center">
+    <h1>Todo Manager</h1>
+
+    <p>{{ message }}</p>
+</div>
+
+<div style="width:300px; margin: auto;">
+    <form name="form" ng-submit="add()">
+        <input style="width: 200px;" type="text" ng-model="newTodo" placeholder="New Task" required />
+        <button style="float:right; margin-top: -6px;" type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Add Task</button>
+        <p ng-show="">Help the user!</p>
+    </form>
+    <br />
+    <ul class="list-group">
+        <li ng-repeat="todo in todos" class="list-group-item">
+            <input type="checkbox" ng-model="todo.completed" />
+            <span ng-bind="todo.task"></span>
+            <button style="margin-top: -6px;float:right;"type="button" class="btn btn-danger" ng-click="delete($index)">Delete</button>
+        </li>
+    </ul>
+    <button style="margin-bottom:20px;" type="button" class="btn btn-primary" ng-disabled="isDisabled" ng-click="clearFinished()">Clear Finished</button>
+</div>

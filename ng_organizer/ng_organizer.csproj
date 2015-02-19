@@ -65,6 +65,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\dev\styles.css" />
+    <Content Include="css\prod\styles.css" />
+    <Content Include="gulpfile.js" />
+    <Content Include="images\slide1.png" />
+    <Content Include="images\slide2.png" />
+    <Content Include="images\slide3.png" />
+    <Content Include="img\demo.gif" />
+    <Content Include="img\osx.gif" />
+    <Content Include="img\stripe.gif" />
+    <Content Include="index.html" />
+    <Content Include="js\angular-animate.js" />
+    <Content Include="js\angular.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="pages\contact.html" />
+    <Content Include="pages\home.html" />
+    <Content Include="pages\login.html" />
+    <Content Include="pages\registration.html" />
+    <Content Include="pages\todo.html" />
+    <Content Include="responsive-nav.js" />
+    <Content Include="script.js" />
+    <Content Include="slide.css" />
+    <Content Include="slide.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

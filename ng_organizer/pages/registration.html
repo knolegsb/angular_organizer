@@ -1,0 +1,82 @@
+﻿<div class="container" ng-controller="registrationController">
+
+
+    <form name="form" autocomplete="off" novalidate shake-that submitted="submitted" submit="submit()">
+        <div class="panel panel-default box-shadow">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Registration
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group" ng-class="{'has-error': form.firstname.$invalid && submitted}">
+                    <label for="firstname" class="control-label">First Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="firstname"
+                           name="firstname"
+                           placeholder="First Name"
+                           ng-model="firstname"
+                           ng-model-options="{updateOn: 'blur'}"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': form.lastname.$invalid && submitted}">
+                    <label for="lastname" class="control-label">Last Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="lastname"
+                           name="lastname"
+                           placeholder="Last Name"
+                           ng-model="lastname"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': form.email.$invalid && submitted}">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email"
+                           class="form-control"
+                           id="email"
+                           name="email"
+                           placeholder="Email"
+                           ng-model="email"
+                           ng-model-options="{updateOn: 'blur'}"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': form.username.$invalid && submitted}">
+                    <label for="username" class="control-label">Username</label>
+                    <input type="text"
+                           class="form-control"
+                           id="username"
+                           name="lastname"
+                           placeholder="Username"
+                           ng-model="username"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': form.password.$invalid && submitted}">
+                    <label for="password" class="control-label">Password</label>
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           placeholder="Password"
+                           ng-model="password"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': form.password.$invalid && submitted}">
+                    <label for="password" class="control-label">Password Confirm</label>
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           placeholder="Password"
+                           ng-model="password"
+                           required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register Now</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="alert alert-success message" ng-show="showMessage">Well done!</div>
+
+</div>
+

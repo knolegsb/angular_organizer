@@ -1,0 +1,17 @@
+﻿
+<div class="jumbotron text-center">
+    <h1>Busy Life Organizer Main</h1>
+    <p>{{ message }}</p>
+ <div id="slides_control">
+        <div>
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img style="margin:auto;" ng-src="{{slide.image}}">
+                    <div class="carousel-caption">
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+      
+</div>
